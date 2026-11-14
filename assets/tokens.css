@@ -1,0 +1,109 @@
+/* MIZCLIP design tokens. Dark is default; light via [data-theme=light] or system preference. */
+:root {
+  --font: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius-xs: 6px;
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-card: 14px;
+  --radius-l: 16px;
+  --radius-panel: 20px;
+  --radius-sheet: 28px;
+  --radius-pill: 999px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --avatar-leaf: linear-gradient(160deg, #6EE7B7 0%, #10A374 48%, #065F46 100%);
+  --avatar-planet: linear-gradient(160deg, #C4B5FD 0%, #7C5CE6 48%, #3B2A8C 100%);
+  --avatar-cup: linear-gradient(160deg, #93C5FD 0%, #3B76F0 48%, #1E3A8A 100%);
+  --avatar-bolt: linear-gradient(160deg, #FDBA74 0%, #F0661F 48%, #9A2E07 100%);
+  --avatar-star: linear-gradient(160deg, #F9A8D4 0%, #DB2777 48%, #831843 100%);
+  --avatar-home: linear-gradient(160deg, #67E8F9 0%, #0E97B5 48%, #0B4A5C 100%);
+  --avatar-moon: linear-gradient(160deg, #CBD2DE 0%, #6B7385 48%, #2A2F3A 100%);
+}
+
+:root, [data-theme="dark"] {
+  --app-bg: radial-gradient(circle at 12% 22%, rgba(34,51,90,0.55), transparent 45%), radial-gradient(circle at 88% 72%, rgba(74,82,99,0.5), transparent 45%), linear-gradient(160deg, #0E1524 0%, #131A27 40%, #16181E 75%, #1B1C21 100%);
+  --text: #F2F4F8;
+  --text-muted: #A9B1C2;
+  --text-secondary: #C9CFDB;
+  --danger: #FCA5A5;
+  --online: #6EE7B7;
+  --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04) 60%);
+  --glass-blur: blur(24px) saturate(150%);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,0.26), inset 0 -1px 0 rgba(255,255,255,0.04), 0 0 0 1px rgba(255,255,255,0.09), 0 14px 30px -16px rgba(0,0,0,0.7);
+  --panel-bg: linear-gradient(150deg, rgba(40,44,56,0.72), rgba(22,24,30,0.78));
+  --panel-blur: blur(40px) saturate(160%);
+  --panel-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 0 0 1px rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.85);
+  --soft: rgba(255,255,255,0.07);
+  --separator: rgba(255,255,255,0.09);
+  --primary-bg: linear-gradient(145deg, #FFFFFF, #DCE2EE);
+  --primary-text: #0E1424;
+  --primary-shadow: inset 0 -1px 0 rgba(0,0,0,0.12), 0 6px 14px -6px rgba(0,0,0,0.6);
+  --switch-on-track: rgba(255,255,255,0.88);
+  --switch-on-thumb: #0E1424;
+  --switch-off-track: rgba(255,255,255,0.16);
+  --switch-off-thumb: #F2F4F8;
+  --selected-ring: 0 0 0 3px rgba(14,20,36,0.9), 0 0 0 5px rgba(255,255,255,0.85);
+}
+
+[data-theme="light"] {
+  --app-bg: radial-gradient(circle at 12% 22%, rgba(150,176,232,0.55), transparent 45%), radial-gradient(circle at 88% 72%, rgba(196,202,216,0.7), transparent 45%), linear-gradient(160deg, #E8EDF7 0%, #EDF0F6 40%, #F1F2F5 75%, #ECEEF1 100%);
+  --text: #0E1424;
+  --text-muted: #5B6476;
+  --text-secondary: #3A4252;
+  --danger: #B42318;
+  --online: #10A374;
+  --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46) 60%);
+  --glass-blur: blur(24px) saturate(150%);
+  --glass-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(255,255,255,0.35), 0 0 0 1px rgba(20,28,45,0.07), 0 14px 30px -18px rgba(20,28,45,0.3);
+  --panel-bg: linear-gradient(150deg, rgba(255,255,255,0.74), rgba(238,241,247,0.62));
+  --panel-blur: blur(40px) saturate(160%);
+  --panel-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 0 0 1px rgba(20,28,45,0.08), 0 40px 80px -30px rgba(20,28,45,0.4);
+  --soft: rgba(20,28,45,0.056);
+  --separator: rgba(20,28,45,0.08);
+  --primary-bg: linear-gradient(145deg, #2A3142, #0E1424);
+  --primary-text: #FFFFFF;
+  --primary-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -6px rgba(14,20,36,0.45);
+  --switch-on-track: #0E1424;
+  --switch-on-thumb: #FFFFFF;
+  --switch-off-track: rgba(20,28,45,0.16);
+  --switch-off-thumb: #FFFFFF;
+  --selected-ring: 0 0 0 3px rgba(255,255,255,0.95), 0 0 0 5px rgba(14,20,36,0.85);
+}
+
+@media (prefers-color-scheme: light) {
+:root:not([data-theme="dark"]) {
+    --app-bg: radial-gradient(circle at 12% 22%, rgba(150,176,232,0.55), transparent 45%), radial-gradient(circle at 88% 72%, rgba(196,202,216,0.7), transparent 45%), linear-gradient(160deg, #E8EDF7 0%, #EDF0F6 40%, #F1F2F5 75%, #ECEEF1 100%);
+    --text: #0E1424;
+    --text-muted: #5B6476;
+    --text-secondary: #3A4252;
+    --danger: #B42318;
+    --online: #10A374;
+    --glass-bg: linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46) 60%);
+    --glass-blur: blur(24px) saturate(150%);
+    --glass-shadow: inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(255,255,255,0.35), 0 0 0 1px rgba(20,28,45,0.07), 0 14px 30px -18px rgba(20,28,45,0.3);
+    --panel-bg: linear-gradient(150deg, rgba(255,255,255,0.74), rgba(238,241,247,0.62));
+    --panel-blur: blur(40px) saturate(160%);
+    --panel-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 0 0 1px rgba(20,28,45,0.08), 0 40px 80px -30px rgba(20,28,45,0.4);
+    --soft: rgba(20,28,45,0.056);
+    --separator: rgba(20,28,45,0.08);
+    --primary-bg: linear-gradient(145deg, #2A3142, #0E1424);
+    --primary-text: #FFFFFF;
+    --primary-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -6px rgba(14,20,36,0.45);
+    --switch-on-track: #0E1424;
+    --switch-on-thumb: #FFFFFF;
+    --switch-off-track: rgba(20,28,45,0.16);
+    --switch-off-thumb: #FFFFFF;
+    --selected-ring: 0 0 0 3px rgba(255,255,255,0.95), 0 0 0 5px rgba(14,20,36,0.85);
+  }
+}
+
+.glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); box-shadow: var(--glass-shadow); }
+.panel { background: var(--panel-bg); backdrop-filter: var(--panel-blur); box-shadow: var(--panel-shadow); }
+.btn-primary { background: var(--primary-bg); color: var(--primary-text); box-shadow: var(--primary-shadow); border-radius: var(--radius-pill); }

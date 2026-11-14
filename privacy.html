@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru" data-title-ru="MIZCLIP — политика конфиденциальности" data-title-en="MIZCLIP — Privacy Policy">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Только свои файлы, без запросов в сеть. Без трекеров, cookies и аналитики. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="dark light">
+  <title>MIZCLIP — политика конфиденциальности</title>
+  <meta name="description" content="Какие данные хранит MIZCLIP и куда они передаются: только на ваших устройствах, без сервера, аккаунтов и аналитики.">
+  <link rel="icon" href="assets/logo/mizclip-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/logo/icon-small-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo/icon-180.png">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/doc.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="./">
+      <img src="assets/logo/mizclip-icon.svg" alt="" width="32" height="32">
+      <span>MIZCLIP</span>
+    </a>
+    <nav class="nav">
+      <a href="./#download"><span data-lang="ru">Скачать</span><span data-lang="en">Download</span></a>
+      <button type="button" class="chip" id="lang" lang="en" aria-label="Switch to English">EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="doc" data-lang="ru" lang="ru">
+      <h1>Политика конфиденциальности</h1>
+      <p class="updated">Действует с 10 ноября 2026 года</p>
+
+      <div class="summary glass">
+        <ul>
+          <li>MIZCLIP не собирает данные. У нас нет сервера, аккаунтов, аналитики, рекламы и отчётов о сбоях.</li>
+          <li>Всё, что вы копируете, хранится только на ваших устройствах, в зашифрованной базе.</li>
+          <li>Свои устройства обмениваются данными напрямую, только внутри одной Wi‑Fi сети и по зашифрованному соединению. Через интернет ничего не передаётся.</li>
+          <li>Мы не видим ваши данные и не можем их ни прочитать, ни восстановить.</li>
+        </ul>
+      </div>
+
+      <p>Это политика приложения MIZCLIP для iPhone, iPad, Android, macOS, Windows и Linux. Приложение делает MBers Laboratory. Вопросы — на <a href="mailto:support@mberslab.com">support@mberslab.com</a>.</p>
+
+      <h2>Что хранится на устройстве</h2>
+      <p>Каждое устройство с MIZCLIP хранит у себя:</p>
+      <ul>
+        <li>историю буфера обмена: текст, ссылки, картинки и файлы, которые вы скопировали, добавили или отправили в MIZCLIP;</li>
+        <li>доски и «Постоянное» — шаблоны, адреса, реквизиты, которые вы сохранили сами;</li>
+        <li>текст, распознанный на картинках, — для поиска. Распознавание идёт на самом устройстве;</li>
+        <li>имя и аватар устройства, список ваших связанных устройств, настройки;</li>
+        <li>ключи шифрования этого устройства и вашей группы устройств.</li>
+      </ul>
+      <p>База целиком зашифрована (SQLCipher). Ключи лежат в системном хранилище: Keychain на iPhone, iPad и Mac, Android Keystore, хранилище ключей Windows и Linux. Если вы включили PIN-код на «Постоянное», хранится не сам код, а его хэш.</p>
+      <p>Пароли MIZCLIP старается не сохранять: то, что менеджеры паролей помечают как секрет, в историю не попадает, а одноразовые коды сами стираются из истории через минуту. На компьютере можно исключить приложения, из которых ничего не сохраняется. Пароли и одноразовые коды не уходят даже на ваши другие устройства.</p>
+
+      <h2>Что передаётся между вашими устройствами</h2>
+      <p>Устройства связываются один раз: одно показывает QR-код, другое его сканирует, или оба показывают одинаковые 6 цифр. После этого у них есть общий ключ группы.</p>
+      <p>Когда ваши устройства в одной Wi‑Fi сети, они находят друг друга (Bonjour/mDNS) и напрямую обмениваются историей, досками и «Постоянным». Соединение шифруется: устройства проверяют друг друга по ключу группы, каждая запись подписана устройством, которое её создало. Для шифрования используется libsodium — открытая и проверенная библиотека, своей криптографии у нас нет.</p>
+      <p>Если устройства в разных сетях, они ничего не передают и обмениваются, когда снова окажутся в одной сети. Синхронизации через интернет нет.</p>
+
+      <h2>«Рядом»: передача другим людям</h2>
+      <p>По умолчанию ваше устройство в «Рядом» видно только вашим устройствам. Другие люди в той же сети видят его, только если вы сами выбрали видимость «Всем» или нажали «Показать всем на 10 минут». Тогда им видны имя и аватар устройства и его система.</p>
+      <p>Файлы и текст уходят только тогда, когда вы сами их отправляете. Передача идёт напрямую в локальной сети по зашифрованному соединению. Получатель видит, что пришло, сверяет короткий код и сам нажимает «Принять» или «Отклонить».</p>
+
+      <h2>Чего MIZCLIP не делает</h2>
+      <ul>
+        <li>Не обращается к нашим или чужим серверам и не отправляет ничего в интернет.</li>
+        <li>Не собирает аналитику, статистику использования и отчёты о сбоях.</li>
+        <li>Не показывает рекламу и не отслеживает вас в других приложениях и на сайтах.</li>
+        <li>Не просит регистрацию, почту или телефон.</li>
+        <li>Не продаёт и не передаёт данные третьим лицам — у нас их просто нет.</li>
+      </ul>
+      <p>Apple и Google могут показывать нам общую статистику магазина (например, число загрузок) и отчёты о сбоях от тех, кто сам разрешил делиться ими с разработчиками в настройках телефона. Эти сведения приходят от магазина в обезличенном виде и содержимого вашего буфера не включают.</p>
+
+      <h2>Разрешения</h2>
+      <h3>iPhone и iPad</h3>
+      <ul>
+        <li><strong>Локальная сеть</strong> — найти ваши устройства в Wi‑Fi, обмениваться с ними и передавать файлы «Рядом».</li>
+        <li><strong>Камера</strong> — только чтобы отсканировать QR-код при связывании устройств. Ничего не снимается и не сохраняется.</li>
+        <li><strong>Фото (только добавление)</strong> — сохранить картинку или видео в «Фото», когда вы нажимаете «Сохранить в «Фото»» или включили это для «Рядом». Читать вашу медиатеку MIZCLIP не может. Фото для отправки вы выбираете сами в системном окне.</li>
+        <li><strong>Вставка</strong> — при открытии MIZCLIP забирает то, что вы скопировали, в историю. iOS спрашивает об этом сама; можно разрешить всегда в настройках.</li>
+        <li><strong>Face ID</strong> — открыть «Постоянное», если вы закрыли его PIN-кодом.</li>
+        <li><strong>Уведомления</strong> — сообщить, что пришло новое с ваших устройств или через «Рядом».</li>
+        <li><strong>Клавиатура MIZCLIP и «Полный доступ»</strong> — клавиатура показывает историю и «Постоянное» в любом приложении. «Полный доступ» нужен только для того, чтобы клавиатура могла читать общую зашифрованную папку и ключи MIZCLIP на этом же устройстве. В сеть клавиатура не ходит и набранное вами не сохраняет и не передаёт: в ней нет букв, только вставка.</li>
+      </ul>
+      <h3>Android</h3>
+      <ul>
+        <li><strong>Сеть и устройства поблизости</strong> — обмен с вашими устройствами и «Рядом» внутри Wi‑Fi. Разрешение «Интернет» Android требует для любой работы с сетью, в том числе локальной; в интернет MIZCLIP не обращается.</li>
+        <li><strong>Камера</strong> — только для QR-кода при связывании.</li>
+        <li><strong>Уведомления и работа в фоне</strong> — принимать «Рядом» и сообщать о новом.</li>
+        <li><strong>Отпечаток или лицо</strong> — открыть «Постоянное», закрытое PIN-кодом.</li>
+        <li><strong>Клавиатура MIZCLIP</strong> — панель вставки истории и «Постоянного», без букв. Набранное не сохраняет и не передаёт.</li>
+      </ul>
+      <h3>Компьютер</h3>
+      <ul>
+        <li><strong>Локальная сеть</strong> (macOS) и правило брандмауэра для частных сетей (Windows) — обмен с вашими устройствами и «Рядом».</li>
+        <li><strong>Универсальный доступ</strong> (macOS) — чтобы MIZCLIP мог вставить выбранное в другое приложение.</li>
+        <li>MIZCLIP на компьютере сам сохраняет всё, что вы копируете, кроме исключённых приложений и паролей. Сохранение можно поставить на паузу.</li>
+      </ul>
+
+      <h2>Как удалить данные</h2>
+      <ul>
+        <li><strong>Очистить историю</strong> — «Настройки → Очистить историю». История удалится на этом устройстве и на ваших устройствах при следующем обмене. «Постоянное» остаётся.</li>
+        <li><strong>Удалить отдельную запись</strong> — в истории или «Постоянном»; удаление тоже расходится по вашим устройствам.</li>
+        <li><strong>Срок хранения</strong> — «Настройки → Хранить историю»: старое удаляется само.</li>
+        <li><strong>Отключить устройство</strong> — «Настройки → Устройства». Отключённое устройство больше ничего не получает, а на нём самом можно стереть данные.</li>
+        <li><strong>Удалить приложение</strong> — вместе с ним удаляются его база и ключи на этом устройстве. На других ваших устройствах копии остаются, пока вы не удалите их там.</li>
+      </ul>
+      <p>Нам писать не нужно: у нас ваших данных нет. По той же причине мы не можем их восстановить, если потеряны все устройства.</p>
+
+      <h2>Дети</h2>
+      <p>MIZCLIP ничего не собирает ни у взрослых, ни у детей.</p>
+
+      <h2>Этот сайт</h2>
+      <p>Сайт MIZCLIP размещён на GitHub Pages. Он не использует cookies, трекеры и аналитику. Главная страница запрашивает у GitHub сведения о последней версии, а установщики скачиваются с GitHub, поэтому GitHub видит ваш адрес в интернете, как у любого сайта. Это регулирует <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">политика GitHub</a>.</p>
+
+      <h2>Изменения</h2>
+      <p>Если политика изменится, новая версия появится на этой странице с новой датой. Если когда-нибудь MIZCLIP начнёт обрабатывать данные иначе, мы скажем об этом в приложении заранее.</p>
+
+      <h2>Контакты</h2>
+      <p>MBers Laboratory · <a href="mailto:support@mberslab.com">support@mberslab.com</a></p>
+    </article>
+
+    <article class="doc" data-lang="en" lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Effective November 10, 2026</p>
+
+      <div class="summary glass">
+        <ul>
+          <li>MIZCLIP does not collect data. We have no server, accounts, analytics, ads or crash reporting.</li>
+          <li>Everything you copy stays on your devices, in an encrypted database.</li>
+          <li>Your devices talk to each other directly, only on the same Wi‑Fi network and over an encrypted connection. Nothing goes over the internet.</li>
+          <li>We cannot see your data, read it or recover it.</li>
+        </ul>
+      </div>
+
+      <p>This policy covers the MIZCLIP app for iPhone, iPad, Android, macOS, Windows and Linux. MIZCLIP is made by MBers Laboratory. Questions: <a href="mailto:support@mberslab.com">support@mberslab.com</a>.</p>
+
+      <h2>What is stored on your device</h2>
+      <p>Each device with MIZCLIP keeps:</p>
+      <ul>
+        <li>clipboard history: text, links, pictures and files you copied, added or shared to MIZCLIP;</li>
+        <li>boards and Pinned items — templates, addresses, details you saved yourself;</li>
+        <li>text recognized in pictures, for search. Recognition runs on the device;</li>
+        <li>the device name and avatar, the list of your linked devices, settings;</li>
+        <li>the encryption keys of this device and of your device group.</li>
+      </ul>
+      <p>The whole database is encrypted (SQLCipher). Keys are kept in the system key store: Keychain on iPhone, iPad and Mac, Android Keystore, the Windows and Linux key stores. If you set a PIN for Pinned items, only a hash of it is stored.</p>
+      <p>MIZCLIP tries not to keep passwords: content that password managers mark as secret is not saved, and one-time codes are erased from history after a minute. On a computer you can exclude apps that MIZCLIP never saves from. Passwords and one-time codes are not sent even to your other devices.</p>
+
+      <h2>What goes between your devices</h2>
+      <p>You link devices once: one shows a QR code and the other scans it, or both show the same 6 digits. After that they share a group key.</p>
+      <p>When your devices are on the same Wi‑Fi network, they find each other (Bonjour/mDNS) and exchange history, boards and Pinned items directly. The connection is encrypted: devices verify each other with the group key, and every record is signed by the device that created it. Encryption uses libsodium, an open, well-reviewed library; we do not use home-made cryptography.</p>
+      <p>Devices on different networks exchange nothing until they meet on the same network again. There is no sync over the internet.</p>
+
+      <h2>Nearby: sending to other people</h2>
+      <p>By default your device is visible in Nearby only to your own devices. Other people on the same network see it only if you set visibility to “Everyone” or tap “Show to everyone for 10 minutes”. They then see the device name, avatar and system.</p>
+      <p>Files and text are sent only when you send them. The transfer goes directly over the local network on an encrypted connection. The recipient sees what is coming, compares a short code and taps Accept or Decline.</p>
+
+      <h2>What MIZCLIP does not do</h2>
+      <ul>
+        <li>It does not contact our servers or anyone else’s and sends nothing to the internet.</li>
+        <li>It does not collect analytics, usage statistics or crash reports.</li>
+        <li>It shows no ads and does not track you across other apps or websites.</li>
+        <li>It does not ask for sign-up, email or phone number.</li>
+        <li>It does not sell or share data with third parties — we simply do not have any.</li>
+      </ul>
+      <p>Apple and Google may show us general store statistics (such as the number of downloads) and crash reports from people who chose to share them with developers in their phone settings. This comes from the store in anonymized form and never includes your clipboard content.</p>
+
+      <h2>Permissions</h2>
+      <h3>iPhone and iPad</h3>
+      <ul>
+        <li><strong>Local Network</strong> — find your devices on Wi‑Fi, sync with them and send files with Nearby.</li>
+        <li><strong>Camera</strong> — only to scan the QR code when linking devices. Nothing is recorded or saved.</li>
+        <li><strong>Photos (add only)</strong> — save a picture or video to Photos when you tap “Save to Photos” or turn this on for Nearby. MIZCLIP cannot read your library. You pick photos to send yourself in the system picker.</li>
+        <li><strong>Paste</strong> — when you open MIZCLIP it adds what you copied to history. iOS asks about this itself; you can allow it permanently in Settings.</li>
+        <li><strong>Face ID</strong> — open Pinned items if you locked them with a PIN.</li>
+        <li><strong>Notifications</strong> — tell you that something new arrived from your devices or via Nearby.</li>
+        <li><strong>MIZCLIP Keyboard and Full Access</strong> — the keyboard shows your history and Pinned items in any app. Full Access is needed only so the keyboard can read MIZCLIP’s shared encrypted folder and keys on the same device. The keyboard does not use the network and does not store or send what you type: it has no letters, only pasting.</li>
+      </ul>
+      <h3>Android</h3>
+      <ul>
+        <li><strong>Network and nearby devices</strong> — sync with your devices and Nearby inside your Wi‑Fi. Android requires the Internet permission for any networking, local included; MIZCLIP does not contact the internet.</li>
+        <li><strong>Camera</strong> — only for the QR code when linking.</li>
+        <li><strong>Notifications and background work</strong> — receive Nearby transfers and tell you about new items.</li>
+        <li><strong>Fingerprint or face</strong> — open Pinned items locked with a PIN.</li>
+        <li><strong>MIZCLIP Keyboard</strong> — a panel for pasting history and Pinned items, without letters. It does not store or send what you type.</li>
+      </ul>
+      <h3>Computers</h3>
+      <ul>
+        <li><strong>Local Network</strong> (macOS) and a firewall rule for private networks (Windows) — sync with your devices and Nearby.</li>
+        <li><strong>Accessibility</strong> (macOS) — so MIZCLIP can paste the chosen item into another app.</li>
+        <li>On a computer MIZCLIP saves everything you copy, except excluded apps and passwords. You can pause saving.</li>
+      </ul>
+
+      <h2>How to delete your data</h2>
+      <ul>
+        <li><strong>Clear history</strong> — Settings → Clear history. History is deleted on this device and on your devices at the next sync. Pinned items stay.</li>
+        <li><strong>Delete a single item</strong> — in history or Pinned; the deletion also reaches your devices.</li>
+        <li><strong>Retention</strong> — Settings → Keep history: old items are deleted automatically.</li>
+        <li><strong>Disconnect a device</strong> — Settings → Devices. A disconnected device receives nothing new, and its data can be erased on it.</li>
+        <li><strong>Delete the app</strong> — its database and keys on this device go with it. Copies on your other devices stay until you delete them there.</li>
+      </ul>
+      <p>You do not need to contact us: we have none of your data. For the same reason we cannot recover it if all your devices are lost.</p>
+
+      <h2>Children</h2>
+      <p>MIZCLIP collects nothing from adults or children.</p>
+
+      <h2>This website</h2>
+      <p>The MIZCLIP website is hosted on GitHub Pages. It uses no cookies, trackers or analytics. The home page asks GitHub for the latest release, and installers are downloaded from GitHub, so GitHub sees your IP address, as with any website. This is covered by <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub’s privacy statement</a>.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the new version will appear on this page with a new date. If MIZCLIP ever starts handling data differently, we will say so in the app in advance.</p>
+
+      <h2>Contact</h2>
+      <p>MBers Laboratory · <a href="mailto:support@mberslab.com">support@mberslab.com</a></p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-links"><a href="./"><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a><a href="privacy.html"><span data-lang="ru">Политика конфиденциальности</span><span data-lang="en">Privacy Policy</span></a><a href="terms.html"><span data-lang="ru">Условия использования</span><span data-lang="en">Terms of Use</span></a></p>
+    <p>© 2026 MBers Laboratory</p>
+  </footer>
+</body>
+</html>
